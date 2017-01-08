@@ -10,8 +10,7 @@ module.exports.analyze = function (imagePath, res) {
     const ls = spawn('python', [pyScriptPath, imagePath]);
     
     ls.stdout.on('data', (data) => {
-        console.log(data.toString());
-        // res.end(data.toString());
+        res.json(data.toString());
     });
     
     ls.stderr.on('data', (data) => {
