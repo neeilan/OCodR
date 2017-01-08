@@ -35,7 +35,7 @@ document.executeCode = function(language, code){
 
   function setResult(result, append){
     if (append){
-      document.getElementById("result").innerHTML += '\n' + result;
+      document.getElementById("result").innerHTML += ('<br/>' + result);
     }
     else{
     document.getElementById("result").innerHTML = result;
@@ -46,8 +46,7 @@ document.executeCode = function(language, code){
   repl.evaluateOnce(
      code, {
      stdout: function(output) {
-       // output from the ruby process: hello world
-       setResult(output);
+       setResult(output, true);
      }
    }).then(
      function success(result) {
@@ -76,5 +75,5 @@ indent.addEventListener('click', function(){
 
 run.addEventListener('click', function() {
     var code = codeToRun.value;
-    document.executeCode(document.languages.CSHARP, code);
+    document.executeCode(document.languages.RUBY, code);
 })
