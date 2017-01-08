@@ -1,0 +1,27 @@
+canvas {
+}
+
+#panel {
+	width: 280px;
+	height: 100%;
+	border-left: 2px solid black;
+	float: right;
+}
+
+#undo {
+	transform: scaleX(-1);
+	position: absolute;
+	left:  10px;
+	top:  30px;
+	border:  none;
+	background: rgba(255, 0, 0, 0);
+	font-size: 30px;
+}
+
+#undo:focus {
+	outline:  none;
+}
+
+#undo:active {
+	font-size:  32px;
+}
