@@ -1,0 +1,43 @@
+canvas {}
+/* hr {
+	height:  100%;
+	width:  4px;
+	background: black;
+} */
+
+#panel {
+	width: 280px;
+	height: 100%;
+	float: right;
+}
+
+#undo {
+	transform: scaleX(-1);
+	position: absolute;
+	left:  10px;
+	top:  30px;
+	border:  none;
+	background: rgba(255, 0, 0, 0);
+	font-size: 30px;
+}
+
+*:focus, *:active {
+	outline:  none;
+}
+
+.btn:focus,.btn:active {
+   	outline: none !important;
+}
+
+#undo:active {
+	font-size:  32px;
+}
+
+.button-group {
+	bottom:  0;
+	position: absolute;
+}
+
+/* pre {
+	font-size:  48px;
+} */
