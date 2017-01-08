@@ -13,12 +13,12 @@
     };
 
     root.handwriting = handwriting;
-
     handwriting.Canvas = function(cvs, lineWidth) {
         this.canvas = cvs;
         this.cxt = cvs.getContext("2d");
         this.cxt.lineCap = "round";
         this.cxt.lineJoin = "round";
+        //this.cxt.translate(0.5, 0.5)
         this.lineWidth = lineWidth || 3;
         this.width = cvs.width;
         this.height = cvs.height;
@@ -176,7 +176,14 @@
         loadFromUrl(this.step.slice(-1)[0], this);
     };
 
+    handwriting.Canvas.prototype.resize = function() {
+        console.log('size:', this.canvas.height, this.canvas.width);
+        this.height = this.canvas.height;
+        this.width = this.canvas.width;
+    };
+
     handwriting.Canvas.prototype.erase = function() {
+        console.log('erased');
         this.cxt.clearRect(0, 0, this.width, this.height);
         this.step = [];
         this.redo_step = [];
