@@ -1,0 +1,1 @@
+this folder will, hopefully, house some machine learning to attempt Optical character recognition.
