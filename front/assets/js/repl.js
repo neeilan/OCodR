@@ -6,6 +6,17 @@ document.languages = {
   FSHARP : 'fsharp'
 }
 
+var heads = {
+	csharp :{
+		start: 'public class Hello1{public static void Main() {',
+		end:   ' }}'
+	},
+	java : {
+		start: 'public class Main{public static void main(String[] args) {',
+		end:   ' }}'
+	}
+};
+
 function indent(code){
   var chars = code.toString().split('');
   var result = [];
@@ -26,9 +37,14 @@ function indent(code){
   return result.join('');
 }
 
-document.executeCode = function(language) { 
 
-  var code = heads[language].start + out.value + heads[language].end;
+document.executeCode = function(language) { 
+  var code;
+  if (heads[language]){
+    code = heads[language].start + out.value + heads[language].end;
+  } else {
+    code = out.value;
+  }
 
   var REPLIT_TOKEN = {
     "msg_mac":"iEYgCNoz7R2NBWzEo/gIrvBC2wGFOgWntT2p9PI4qe0=", // expires in 5 days
@@ -36,7 +52,7 @@ document.executeCode = function(language) {
   };
 
   function setResult(result){
-    document.getElementById("result").innerHTML = result;
+    document.getElementById("result").innerHTML += '<br/>' + result;
   }
 
   var repl = new ReplitClient('api.repl.it', 80, language, REPLIT_TOKEN);

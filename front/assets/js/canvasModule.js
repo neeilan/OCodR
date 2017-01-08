@@ -13,13 +13,16 @@
     var clear = document.getElementById('clear');
     var upload = document.getElementById('upload');
     var openFile = document.getElementById('openFile');
+    var langs = document.getElementById('langs');
 
     window.onresize = function() {
         canvasResize(canvas);
     };  
 
      run.addEventListener('click', function() {
-        document.executeCode(document.languages.RUBY);
+	result.innerHTML = "";
+        var lang = langs.options[langs.selectedIndex].value;
+        document.executeCode(document.languages[lang]);
     });
 
      can.addEventListener('mouseup', function() {
