@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ocodr</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+
+  <!-- Latest minified Jquery -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!-- repl js-->
+<script src="assets/js/repl.js"></script>
+
+<!-- repl api js-->
+<script src="https://repl.it/lib/api.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- language heads-->
+<script src="assets/js/lang.js"></script>
+
+</head>
+<body>
+
+  <canvas class="hidden-xs"  id="can"></canvas>
+  <button id="undo" class="hidden-xs glyphicon glyphicon-share-alt"></button>
+  <div id="panel">
+      <h2>Output:</h2>
+      <!-- <pre id="out"></pre> -->
+      <input id="out" class="form-control">
+      <br>
+      <h2>Result:</h2>
+      <kbd id="result"></kbd>
+      <div class="button-group">
+        <button id="clear" type="button" class="btn btn-warning">clear</button>
+        <button id="execute" type="button" class="btn btn-success">execute</button>
+      </div>
+  </div>
+
+  </body>
+
+  <script type="text/javascript" src="assets/js/handwriting.canvas.js"></script>
+  <script type="text/javascript" src="assets/js/canvasModule.js"></script>
+</html>
