@@ -244,7 +244,7 @@
                         break;
                 }
 
-
+        
             }
         });
         xhr.open("POST", "https://www.google.com.tw/inputtools/request?ime=handwriting&app=mobilesearch&cs=1&oe=UTF-8");

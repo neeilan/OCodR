@@ -7,7 +7,7 @@ document.languages = {
 }
 
 function indent(code){
-  var chars = code.split('');
+  var chars = code.toString().split('');
   var result = [];
   for (var i in chars){
     var char = chars[i];
@@ -26,7 +26,9 @@ function indent(code){
   return result.join('');
 }
 
-document.executeCode = function(language, code){
+document.executeCode = function(language) { 
+
+  var code = heads[language].start + out.value + heads[language].end;
 
   var REPLIT_TOKEN = {
     "msg_mac":"iEYgCNoz7R2NBWzEo/gIrvBC2wGFOgWntT2p9PI4qe0=", // expires in 5 days
@@ -38,6 +40,7 @@ document.executeCode = function(language, code){
   }
 
   var repl = new ReplitClient('api.repl.it', 80, language, REPLIT_TOKEN);
+
   repl.evaluateOnce(
      code, {
      stdout: function(output) {
@@ -52,7 +55,7 @@ document.executeCode = function(language, code){
        if (result.error) {
          setResult('Error:' + result.error);
        } else {
-         setResult('Result' + result.data);
+          setResult(result.data);
        }
      },
      function error(error) {
@@ -62,14 +65,9 @@ document.executeCode = function(language, code){
    );
 }
 
-var run = document.getElementById("execute");
-var codeToRun = document.getElementById("codeToRun");
+// var run = document.getElementById("execute");
 
-codeToRun.addEventListener('change', function(){
-  codeToRun.value = indent(codeToRun.value);
-})
-
-run.addEventListener('click', function() {
-    var code = codeToRun.value;
-    document.executeCode(document.languages.CSHARP, code);
-})
+// run.addEventListener('click', function() {
+//     var code = codeToRun.value;
+//     document.executeCode(document.languages.CSHARP, code);
+// })

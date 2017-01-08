@@ -18,18 +18,36 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-</head>
 
+<!-- repl js-->
+<script src="assets/js/repl.js"></script>
+
+<!-- repl api js-->
+<script src="https://repl.it/lib/api.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- language heads-->
+<script src="assets/js/lang.js"></script>
+
+</head>
 <body>
-  <canvas id="can" style="cursor: none;"></canvas>
-  <button id="undo" class="glyphicon glyphicon-share-alt"></button>
+
+  <canvas class="hidden-xs"  id="can"></canvas>
+  <button id="undo" class="hidden-xs glyphicon glyphicon-share-alt"></button>
   <div id="panel">
-      <div id="output"></div>
-      <button id="execute">execute</button>
-      <button id="clear">clear</button>
+      <h2>Output:</h2>
+      <!-- <pre id="out"></pre> -->
+      <input id="out" class="form-control">
+      <br>
+      <h2>Result:</h2>
+      <kbd id="result"></kbd>
+      <div class="button-group">
+        <button id="clear" type="button" class="btn btn-warning">clear</button>
+        <button id="execute" type="button" class="btn btn-success">execute</button>
+      </div>
   </div>
 
   </body>
+
   <script type="text/javascript" src="assets/js/handwriting.canvas.js"></script>
   <script type="text/javascript" src="assets/js/canvasModule.js"></script>
 </html>

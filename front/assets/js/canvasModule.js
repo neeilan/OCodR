@@ -1,13 +1,10 @@
-
 (function main(){
-
     //create new canvas
     var canvas = new handwriting.Canvas(document.getElementById("can"));
     canvasResize(canvas);
 
     //enable redo
     canvas.set_Undo_Redo(true, false);
-
 
     var run = document.getElementById("execute");
     var out = document.getElementById("out");
@@ -17,10 +14,10 @@
 
     window.onresize = function() {
         canvasResize(canvas);
-    };
+    };  
 
      run.addEventListener('click', function() {
-        canvas.recognize();
+        document.executeCode(document.languages.RUBY);
     });
 
      can.addEventListener('mouseup', function() {
@@ -38,7 +35,9 @@
     //callback for OCR Api
     canvas.setCallBack(function(data, err) {
         if(err) throw err;
-        else displayOut(data);
+        else {
+            displayOut(data);
+        };
      });
 
     //Set options
@@ -51,7 +50,7 @@
 })();
 
    function displayOut(data) {
-     output.innerHTML = data;
+     out.value = indent(data);
    }
 
    function canvasResize(canvas) {

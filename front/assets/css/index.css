@@ -1,10 +1,13 @@
-canvas {
-}
+canvas {}
+/* hr {
+	height:  100%;
+	width:  4px;
+	background: black;
+} */
 
 #panel {
 	width: 280px;
 	height: 100%;
-	border-left: 2px solid black;
 	float: right;
 }
 
@@ -18,10 +21,23 @@ canvas {
 	font-size: 30px;
 }
 
-#undo:focus {
+*:focus, *:active {
 	outline:  none;
+}
+
+.btn:focus,.btn:active {
+   	outline: none !important;
 }
 
 #undo:active {
 	font-size:  32px;
 }
+
+.button-group {
+	bottom:  0;
+	position: absolute;
+}
+
+/* pre {
+	font-size:  48px;
+} */
