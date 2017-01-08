@@ -55,7 +55,7 @@
 }
 
 #upload {
-	border: 1px solid black; 
+	border: 1px solid black;
 }
 
 
@@ -76,5 +76,5 @@
 	font-size:  48px;
 	text-align: center;
 	color: #499bc9;
-	padding-bottom:  20px;
+	padding-bottom:  0px;
 }

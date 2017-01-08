@@ -17,7 +17,7 @@
 
     window.onresize = function() {
         canvasResize(canvas);
-    };  
+    };
 
      run.addEventListener('click', function() {
 	result.innerHTML = "";
@@ -57,6 +57,38 @@
             numOfReturn: 1
         }
     );
+
+    $('.upload-btn').on('click', function (){
+        $('#upload-input').click();
+        $('.progress-bar').text('0%');
+        $('.progress-bar').width('0%');
+    });
+
+
+    $('#upload-input').on('change', function(e){
+      var files = $(this).get(0).files;
+      if (files.length > 0){
+        var formData = new FormData();
+        for (var i = 0; i < files.length; i++) {
+          var file = files[i];
+          formData.append('uploads[]', file, file.name);
+        }
+        $.ajax({
+          url: window.location.href + 'image',
+          type: 'POST',
+          data: formData,
+          processData: false,
+          contentType: false,
+          success: function(data){
+              
+          },
+          xhr: function() {
+            var xhr = new XMLHttpRequest();
+            return xhr;
+          }
+        });
+      }
+    });
 })();
 
    function displayOut(data) {
