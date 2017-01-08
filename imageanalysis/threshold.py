@@ -28,11 +28,11 @@ for i in range(rows):
             xvals.append(i)
             yvals.append(j)
 
-cv.imshow('thresh_image', thresh)
+# cv.imshow('thresh_image', thresh)
 
 cv.waitKey(0)
 cv.destroyAllWindows()
 
-print len(xvals)
-print len(yvals)
+result = [xvals,yvals]
 
+print result
