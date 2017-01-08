@@ -34,16 +34,28 @@
   <canvas class="hidden-xs"  id="can"></canvas>
   <button id="undo" class="hidden-xs glyphicon glyphicon-share-alt"></button>
   <div id="panel">
+      <h1 id="logo">OCodR()</h1>
       <h2>Output:</h2>
-      <!-- <pre id="out"></pre> -->
-      <input id="out" class="form-control">
+      <input id="out" class="form-control" placeholder="Your Code">
       <br>
       <h2>Result:</h2>
-      <kbd id="result"></kbd>
-      <div class="button-group">
-        <button id="clear" type="button" class="btn btn-warning">clear</button>
-        <button id="execute" type="button" class="btn btn-success">execute</button>
+      <kbd id="result">Your Result</kbd>
+      <div id="langsWrapper">
+          <label for="langs" class="control-label">Language</label>
+          <select class="form-control" id="langs">
+            <option>Ruby</option>
+            <option>Java Script</option>
+            <option>Java</option>
+             <option>C#</option>
+            <option>F#</option>
+          </select>
       </div>
+      <div class="button-group">
+         <button id="execute" type="button" class="btn btn-success"><span class="glyphicon glyphicon-play"></span>run</button>
+        <button id="clear" type="button" class="btn btn-warning"><span class="glyphicon glyphicon-trash"></span>clear</button>
+        <button id="upload" type="button" class="btn"><span class="glyphicon glyphicon-open"></span></button>
+      </div>
+      <input id="openFile" type="file" style="visibility:hidden" />  
   </div>
 
   </body>

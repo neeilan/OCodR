@@ -1,14 +1,17 @@
-canvas {}
-/* hr {
-	height:  100%;
-	width:  4px;
-	background: black;
-} */
-
+#can {
+	float: left;
+	width:  calc(100% - 300px);
+	cursor:  url(../cursor.png), auto;
+}
 #panel {
+	padding:  10px;
 	width: 280px;
 	height: 100%;
-	float: right;
+	float: left;
+	right:  0;
+	background:  #CCCECF;
+	position: absolute;
+	border-left:  1px solid #B0B0B0;
 }
 
 #undo {
@@ -34,10 +37,44 @@ canvas {}
 }
 
 .button-group {
-	bottom:  0;
+	bottom:  20px;
+	left: 10px;
 	position: absolute;
 }
 
-/* pre {
+.button-group.button {
+	display:  inline-block;
+}
+
+#execute {
+	margin-right: 20px;
+}
+
+#clear {
+	margin-right:  45px;
+}
+
+#upload {
+	border: 1px solid black; 
+}
+
+
+.glyphicon-play, .glyphicon-trash {
+	margin-right:  5px;
+}
+
+#langsWrapper {
+	position: absolute;
+	bottom:  80px;
+	width:  260px;
+	right: 10px;
+}
+
+#logo {
+	font-family:  Montserrat, Helvetica, Droid Sans;
+	font-weight:  700;
 	font-size:  48px;
-} */
+	text-align: center;
+	color: #499bc9;
+	padding-bottom:  20px;
+}

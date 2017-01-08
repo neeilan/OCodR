@@ -11,6 +11,8 @@
     var can = document.getElementById('can');
     var undo = document.getElementById('undo');
     var clear = document.getElementById('clear');
+    var upload = document.getElementById('upload');
+    var openFile = document.getElementById('openFile');
 
     window.onresize = function() {
         canvasResize(canvas);
@@ -30,6 +32,11 @@
 
      clear.addEventListener('click', function() {
         canvas.erase();
+        out.value = '';
+     });
+
+     upload.addEventListener('click', function() {
+         openFile.click();
      });
 
     //callback for OCR Api
