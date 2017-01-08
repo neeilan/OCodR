@@ -6,17 +6,17 @@ document.languages = {
   FSHARP : 'fsharp'
 }
 
-function indent(code){
+function indentCode(code){
   var chars = code.split('');
   var result = [];
   for (var i in chars){
     var char = chars[i];
     if (char == '{' || char == ';'){
       result.push(char);
-      result.push('\n');
+      result.push('\r');
     }
     else if (char == '}'){
-      result.push('\n');
+      result.push('\r');
       result.push(char);
     }
     else{
@@ -33,8 +33,13 @@ document.executeCode = function(language, code){
     "time_created":1483841551000
   };
 
-  function setResult(result){
+  function setResult(result, append){
+    if (append){
+      document.getElementById("result").innerHTML += '\n' + result;
+    }
+    else{
     document.getElementById("result").innerHTML = result;
+    }
   }
 
   var repl = new ReplitClient('api.repl.it', 80, language, REPLIT_TOKEN);
@@ -51,8 +56,8 @@ document.executeCode = function(language, code){
        // error.
        if (result.error) {
          setResult('Error:' + result.error);
-       } else {
-         setResult('Result' + result.data);
+       } else if (result.data) {
+        setResult('Result:' + result.data, true);
        }
      },
      function error(error) {
@@ -63,10 +68,10 @@ document.executeCode = function(language, code){
 }
 
 var run = document.getElementById("execute");
-var codeToRun = document.getElementById("codeToRun");
+var indent = document.getElementById("indent");
 
-codeToRun.addEventListener('change', function(){
-  codeToRun.value = indent(codeToRun.value);
+indent.addEventListener('click', function(){
+  codeToRun.value = indentCode(codeToRun.value);
 })
 
 run.addEventListener('click', function() {
