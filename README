@@ -1,1 +1,1 @@
-Testing OCR libraries for Java and Python
+OCodR is a project for Hack the Valley 2017. It aims to make hand-written code executable by leveraging existing OCR technology with some of our own image processing and ML algorithms.
