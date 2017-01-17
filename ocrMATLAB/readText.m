@@ -4,6 +4,6 @@ function [ readText ] = readText( imageFile )
 I = imread(imageFile);
 x = ocr(I);
 readText = x.Text;
-
+display(readText);
 end
 
